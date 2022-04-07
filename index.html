@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maquina Expendedora</title>
+  <link rel="icon" type="imagen/png" href="imagenes/maquina-expendedora.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Maquina Expendedora</h1>
+
+  <section id="maquina">
+    <article id="productos">
+      <!--COCA-COLA -->
+      <button class="botones">
+        <h3>Coca-Cola</h3>
+        <h3>Codigo: A1</h3>
+        <img class="imagenes" src="imagenes/lata.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadCoca">5</p>
+        </h3>
+        <h3>Precio: 1800</h3>
+      </button>
+
+      <!--DE TODITO-->
+      <button class="botones">
+        <h3>DeTodito</h3>
+        <h3>Codigo: B2</h3>
+        <img class="imagenes" src="imagenes/papas.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadDetodito">8</p>
+        </h3>
+        <h3>Precio: 3600</h3>
+      </button>
+
+      <!--GOMITAS TRULULU-->
+      <button class="botones">
+        <h3>Gomitas trululu</h3>
+        <h3>Codigo: C3</h3>
+        <img class="imagenes" src="imagenes/gomitas.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadGomitas">3</p>
+        </h3>
+        <h3>Precio: 2200</h3>
+      </button>
+
+      <!--CHOCOLATINA-->
+      <button class="botones">
+        <h3>Chocolatina Jet</h3>
+        <h3>Codigo: A4</h3>
+        <img class="imagenes" src="imagenes/chocolatina.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadChocolatina">2</p>
+        </h3>
+        <h3>Precio: 800</h3>
+      </button>
+
+      <!--TRIDENT SANDIA-->
+      <button class="botones">
+        <h3>Trident Sandia</h3>
+        <h3>Codigo: B5</h3>
+        <img class="imagenes" src="imagenes/trident.png" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadTrident">6</p>
+        </h3>
+        <h3>Precio: 1500</h3>
+      </button>
+
+      <!--AGUA CRISTAL-->
+      <button class="botones">
+        <h3>Agua cristal</h3>
+        <h3>Codigo: C6</h3>
+        <img class="imagenes" src="imagenes/aguaa.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadAgua">1</p>
+        </h3>
+        <h3>Precio: 500</h3>
+      </button>
+
+      <!--CHOCORRAMO-->
+      <button class="botones">
+        <h3>Chocorramo</h3>
+        <h3>Codigo: A7</h3>
+        <img class="imagenes" src="imagenes/choco.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadChocorramo">4</p>
+        </h3>
+        <h3>Precio: 2000</h3>
+      </button>
+
+      <!--MANI CON SAL-->
+      <button class="botones">
+        <h3>Mani con sal</h3>
+        <h3>Codigo: B8</h3>
+        <img class="imagenes" src="imagenes/mani.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadMani">7</p>
+        </h3>
+        <h3>Precio: 3200</h3>
+      </button>
+
+      <!--GATORADE-->
+      <button class="botones">
+        <h3>Gatorade</h3>
+        <h3>Codigo: C9</h3>
+        <img class="imagenes" src="imagenes/gatorade.jpg" alt="" />
+        <h3>Cantidad:
+          <p id="cantidadGatorade">3</p>
+        </h3>
+        <h3>Precio: 4000</h3>
+      </button>
+    </article>
+
+    <article id="reglas">
+      <p>Reglas de uso</p>
+      <p>1. Los codigos de los productos deben ir en mayuscula, sin espacio, tal como se muestra en la descripcion del
+        producto.</p>
+      <p>2. La cantidad del dinero ingresada debe ser igual o mayor al precio del producto.</p>
+      <p>3. Al momento de llegar la cantidad a 0 no se permiten más ventas del producto.</p>
+      <p>4. Verifique su devuelta.</p>
+      <p>5. Cuando la compra sea un exito, para comprar otro producto se debe modificar los campos o si se desea comprar
+        el mismo producto se confirma nuevamente la compra.</p>
+      <p>6. Si no desea realizar mas compras oprima el boton de terminar, este le mostrara el total de ventas,
+        trasacciones y productos adquiridos por usuario.</p>
+    </article>
+
+    <article id="compra">
+      <label class="label">Ingrese el codigo</label>
+      <br>
+      <input id="codigo" class="input" type="text" />
+      <br><br>
+      <label class="label">Ingrese cantidad de dinero</label>
+      <br>
+      <input id="cantidadDinero" class="input" type="text" />
+      <br><br>
+      <button onclick="comprar()" class="BconfirmarTerminar">Confirmar compra✔️</button>
+      <br><br>
+      <label class="label">Su devuelta es</label>
+      <br>
+      <p class="p" id="devueltaI"> </p>
+      <br><br>
+      <button onclick="terminar()" class="BconfirmarTerminar">Terminar compra❌</button>
+    </article>
+
+    <article id="totalTodo">
+      <label class="label">Total ventas</label>
+      <br>
+      <p class="p" id="totalVentas"> </p>
+      <br>
+      <label class="label">Total transacciones</label>
+      <br>
+      <p class="p" id="totalTrasacciones"> </p>
+      <br>
+      <label class="label">Productos adquiridos</label>
+      <br><br><br>
+      <section class="p1">
+        <p id="cocaCola"></p>
+        <p id="deTodito"></p>
+        <p id="gomitas"></p>
+        <p id="chocolatina"></p>
+        <p id="trident"></p>
+        <p id="agua"></p>
+        <p id="chocorramo"></p>
+        <p id="mani"></p>
+        <p id="gatorade"></p>
+      </section>
+      <form>
+        <br><br>
+        <button class="bRestablecer">Nueva compra</button>
+      </form>
+    </article>
+  </section>
+
+  <script>
+    let arrayTransacciones = [],
+      arrayVentas = [],
+      arrayProductos = ["Coca-Cola", "DeTodito", "Gomitas trululu", "Chocolatina Jet", "Trident Sandia", "Agua cristal", "Chocorramo", "Mani con sal", "Gatorade"],
+      arrayCocaCola = [],
+      arrayDetodito = [],
+      arrayGomitas = [],
+      arrayChocolatina = [],
+      arrayTrident = [],
+      arrayAgua = [],
+      arrayChocorramo = [],
+      arrayMani = [],
+      arrayGatorade = [],
+      arrayCantidad1 = [1, 2, 3, 4, 5],
+      arrayCantidad2 = [1, 2, 3, 4, 5, 6, 7, 8],
+      arrayCantidad3 = [1, 2, 3],
+      arrayCantidad4 = [1, 2],
+      arrayCantidad5 = [1, 2, 3, 4, 5, 6],
+      arrayCantidad6 = [1],
+      arrayCantidad7 = [1, 2, 3, 4],
+      arrayCantidad8 = [1, 2, 3, 4, 5, , 7],
+      arrayCantidad9 = [1, 2, 3]
+
+    function comprar() {
+      let codigo = document.getElementById("codigo").value
+      let cantidadDinero = parseInt(document.getElementById("cantidadDinero").value)
+
+      //COCA COLA
+      if (arrayCantidad1 != 0) {
+        if (codigo == "a1") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "A1") {
+          if (cantidadDinero < 1800) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 1800) {
+            devuelta = cantidadDinero - 1800
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO COCA-COLA")
+            arrayTransacciones.push(parseInt(1800))
+            arrayVentas.push(parseInt(1))
+            arrayCocaCola.push(parseInt(1))
+            arrayCantidad1.pop()
+            document.getElementById("cantidadCoca").innerHTML = arrayCantidad1.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //DE TODITO
+      if (arrayCantidad2 != 0) {
+        if (codigo == "b2") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "B2") {
+          if (cantidadDinero < 3600) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 3600) {
+            devuelta = cantidadDinero - 3600
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO DETODITO")
+            arrayTransacciones.push(parseInt(3600))
+            arrayVentas.push(parseInt(1))
+            arrayDetodito.push(parseInt(1))
+            arrayCantidad2.pop()
+            document.getElementById("cantidadDetodito").innerHTML = arrayCantidad2.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //GOMITAS TRULULU
+      if (arrayCantidad3 != 0) {
+        if (codigo == "c3") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "C3") {
+          if (cantidadDinero < 2200) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 2200) {
+            devuelta = cantidadDinero - 2200
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("GOMITAS TRULULU")
+            arrayTransacciones.push(parseInt(2200))
+            arrayVentas.push(parseInt(1))
+            arrayGomitas.push(parseInt(1))
+            arrayCantidad3.pop()
+            document.getElementById("cantidadGomitas").innerHTML = arrayCantidad3.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //CHOCOLATINA
+      if (arrayCantidad4 != 0) {
+        if (codigo == "a4") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "A4") {
+          if (cantidadDinero < 800) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 800) {
+            devuelta = cantidadDinero - 800
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO CHOCOLATINA JET")
+            arrayTransacciones.push(parseInt(800))
+            arrayVentas.push(parseInt(1))
+            arrayChocolatina.push(parseInt(1))
+            arrayCantidad4.pop()
+            document.getElementById("cantidadChocolatina").innerHTML = arrayCantidad4.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //TRIDENT SANDIA
+      if (arrayCantidad5 != 0) {
+        if (codigo == "b5") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "B5") {
+          if (cantidadDinero < 1500) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 1500) {
+            devuelta = cantidadDinero - 1500
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO TRIDENT SANDIA")
+            arrayTransacciones.push(parseInt(1500))
+            arrayVentas.push(parseInt(1))
+            arrayTrident.push(parseInt(1))
+            arrayCantidad5.pop()
+            document.getElementById("cantidadTrident").innerHTML = arrayCantidad5.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //AGUA CRISTAL
+      if (arrayCantidad6 != 0) {
+        if (codigo == "c6") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "C6") {
+          if (cantidadDinero < 500) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 500) {
+            devuelta = cantidadDinero - 500
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO AGUA CRISTAL")
+            arrayTransacciones.push(parseInt(500))
+            arrayVentas.push(parseInt(1))
+            arrayAgua.push(parseInt(1))
+            arrayCantidad6.pop()
+            document.getElementById("cantidadAgua").innerHTML = arrayCantidad6.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //CHOCORRAMO
+      if (arrayCantidad7 != 0) {
+        if (codigo == "a7") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "A7") {
+          if (cantidadDinero < 2000) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 2000) {
+            devuelta = cantidadDinero - 2000
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO CHOCORRAMO")
+            arrayTransacciones.push(parseInt(2000))
+            arrayVentas.push(parseInt(1))
+            arrayChocorramo.push(parseInt(1))
+            arrayCantidad7.pop()
+            document.getElementById("cantidadChocorramo").innerHTML = arrayCantidad7.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //MANI CON SAL
+      if (arrayCantidad8 != 0) {
+        if (codigo == "b8") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "B8") {
+          if (cantidadDinero < 3200) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 3200) {
+            devuelta = cantidadDinero - 3200
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO MANI CON SAL")
+            arrayTransacciones.push(parseInt(3200))
+            arrayVentas.push(parseInt(1))
+            arrayMani.push(parseInt(1))
+            arrayCantidad8.pop()
+            document.getElementById("cantidadMani").innerHTML = arrayCantidad8.length
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+        }
+      }
+
+      //GATORADE
+      if (arrayCantidad9 != 0) {
+        if (codigo == "c9") {
+          alert("Ingrese el codigo en mayuscula")
+        } else if (codigo == "C9") {
+          if (cantidadDinero < 4000) {
+            alert("Valor ingresado insuficiente \nIntente de nuevo")
+            devuelta = "-------------"
+            document.getElementById("devueltaI").innerHTML = devuelta
+          } else if (cantidadDinero >= 4000) {
+            devuelta = cantidadDinero - 4000
+            alert("Compra realizada \nVerifique su devuelta \nPara comprar otro producto modifique los campos o si desea comprar el mismo producto confirme de nuevo la compra")
+            alert("ENTREGANDO GATORADE")
+            arrayTransacciones.push(parseInt(4000))
+            arrayVentas.push(parseInt(1))
+            arrayGatorade.push(parseInt(1))
+            arrayCantidad9.pop()
+            document.getElementById("devueltaI").innerHTML = devuelta
+            document.getElementById("cantidadGatorade").innerHTML = arrayCantidad9.length
+          }
+        }
+      }
+    }
+
+    function terminar() {
+      //TRANSACCIONES TOTALES
+      let transacciones = 0
+      for (let i = 0; i < arrayTransacciones.length; i++) {
+        transacciones = transacciones + arrayTransacciones[i]
+      }
+      document.getElementById("totalTrasacciones").innerHTML = transacciones
+
+      //VENTAS TOTALES
+      let ventas = 0
+      for (let i = 0; i < arrayVentas.length; i++) {
+        ventas = ventas + arrayVentas[i]
+      }
+      document.getElementById("totalVentas").innerHTML = ventas
+
+      //ARRAY COCA COLA 0
+      let cocaCola = 0
+      for (let i = 0; i < arrayCocaCola.length; i++) {
+        cocaCola = cocaCola + arrayCocaCola[i]
+      }
+      if (cocaCola > 0) {
+        document.getElementById("cocaCola").innerHTML = arrayProductos[0] + " = " + cocaCola + " uds"
+      } else {
+        cocaCola = " --------------- "
+        document.getElementById("cocaCola").innerHTML = cocaCola
+      }
+
+      //ARRAY DE TODITO 1
+      let deTodito = 0
+      for (let i = 0; i < arrayDetodito.length; i++) {
+        deTodito = deTodito + arrayDetodito[i]
+      }
+      if (deTodito > 0) {
+        document.getElementById("deTodito").innerHTML = arrayProductos[1] + " = " + deTodito + " uds"
+      } else {
+        deTodito = " --------------- "
+        document.getElementById("deTodito").innerHTML = deTodito
+      }
+
+      //ARRAY GOMITAS 2
+      let gomitas = 0
+      for (let i = 0; i < arrayGomitas.length; i++) {
+        gomitas = gomitas + arrayGomitas[i]
+      }
+      if (gomitas > 0) {
+        document.getElementById("gomitas").innerHTML = arrayProductos[2] + " = " + gomitas + " uds"
+      } else {
+        gomitas = " --------------- "
+        document.getElementById("gomitas").innerHTML = gomitas
+      }
+
+      //ARRAY CHOCOLATINA 3
+      let chocolatina = 0
+      for (let i = 0; i < arrayChocolatina.length; i++) {
+        chocolatina = chocolatina + arrayChocolatina[i]
+      }
+      if (chocolatina > 0) {
+        document.getElementById("chocolatina").innerHTML = arrayProductos[3] + " = " + chocolatina + " uds"
+      } else {
+        chocolatina = " --------------- "
+        document.getElementById("chocolatina").innerHTML = chocolatina
+      }
+
+      //ARRAY TRIDENT 4
+      let trident = 0
+      for (let i = 0; i < arrayTrident.length; i++) {
+        trident = trident + arrayTrident[i]
+      }
+      if (trident > 0) {
+        document.getElementById("trident").innerHTML = arrayProductos[4] + " = " + trident + " uds"
+      } else {
+        trident = " --------------- "
+        document.getElementById("trident").innerHTML = trident
+      }
+
+      //ARRAY AGUA 5
+      let agua = 0
+      for (let i = 0; i < arrayAgua.length; i++) {
+        agua = agua + arrayAgua[i]
+      }
+      if (agua > 0) {
+        document.getElementById("agua").innerHTML = arrayProductos[5] + " = " + agua + " uds"
+      } else {
+        agua = " --------------- "
+        document.getElementById("agua").innerHTML = agua
+      }
+
+      //ARRAY CHOCORRAMO 6
+      let chocorramo = 0
+      for (let i = 0; i < arrayChocorramo.length; i++) {
+        chocorramo = chocorramo + arrayChocorramo[i]
+      }
+      if (chocorramo > 0) {
+        document.getElementById("chocorramo").innerHTML = arrayProductos[6] + " = " + chocorramo + " uds"
+      } else {
+        chocorramo = " --------------- "
+        document.getElementById("chocorramo").innerHTML = chocorramo
+      }
+
+      //ARRAY MANI 7
+      let mani = 0
+      for (let i = 0; i < arrayMani.length; i++) {
+        mani = mani + arrayMani[i]
+      }
+      if (mani > 0) {
+        document.getElementById("mani").innerHTML = arrayProductos[7] + " = " + mani + " uds"
+      } else {
+        mani = " --------------- "
+        document.getElementById("mani").innerHTML = mani
+      }
+
+      //ARRAY GATORADE 8
+      let gatorade = 0
+      for (let i = 0; i < arrayGatorade.length; i++) {
+        gatorade = gatorade + arrayGatorade[i]
+      }
+      if (gatorade > 0) {
+        document.getElementById("gatorade").innerHTML = arrayProductos[8] + " = " + gatorade + " uds"
+      } else {
+        gatorade = " --------------- "
+        document.getElementById("gatorade").innerHTML = gatorade
+      }
+    }  
+  </script>
+</body>
+
+</html>

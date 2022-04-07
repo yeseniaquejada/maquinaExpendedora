@@ -1,0 +1,36 @@
+/*  let arraycantidadCoca = []
+ let coca = 5
+        for (let i = 0; i < arraycantidadCoca.length; i++) {
+          coca = coca - arraycantidadCoca[i]
+          if (codigo == "a1") {
+            alert("Ingrese el codigo en mayuscula")
+          } else if (codigo == "A1") {
+            if (cantidadDinero < 1800) {
+              alert("Valor ingresado insuficiente \nIntente de nuevo")
+              devuelta = "-------------"
+              document.getElementById("devueltaI").innerHTML = devuelta
+            } else {
+              devuelta = cantidadDinero - 1800
+            }
+            arrayTransacciones.push(parseInt(1800))
+            arrayVentas.push(parseInt(1))
+            arrayCocaCola.push(parseInt(1))
+            arraycantidadCoca.pop()  
+            document.getElementById("cantidadCoca").innerHTML = arraycantidadCoca
+            document.getElementById("devueltaI").innerHTML = devuelta
+          }
+          if (coca < 0) {
+            document.getElementById("cantidadCoca").innerHTML = arraycantidadCoca
+          } else {
+            coca = "No hay más unidades"
+            document.getElementById("cantidadCoca").innerHTML = coca
+          }
+        }
+    
+
+        else if (arrayCantidad == 0) {
+          alert("Cantidad insuficiente del producto \nPuede comprar otro producto o terminar la compra")
+        } */
+
+
+        
